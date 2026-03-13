@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>This is Akira&#39;s Blog!</title>
+    <link href="/2026/03/12/hello-world/"/>
+    <url>/2026/03/12/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>这里存放的是第一次建立博客时的备忘录。</p><h2 id="用于Git-Bash的终端控制台命令摘要"><a href="#用于Git-Bash的终端控制台命令摘要" class="headerlink" title="用于Git Bash的终端控制台命令摘要"></a>用于Git Bash的终端控制台命令摘要</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><h3 id="在本地启动自己的服务器"><a href="#在本地启动自己的服务器" class="headerlink" title="在本地启动自己的服务器"></a>在本地启动自己的服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: 如果要启动本地的服务器，需要在浏览器地址栏中输入</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:<span class="number">4000</span></span><br></pre></td></tr></table></figure><h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: 这个命令的作用是生成静态的网页，即将目前更新完成之后的Markdown文章和所有配置整合起来生成一个网页。<br>Attention: 这个网页不能从本地直接打开。</p><h3 id="传递至远程地址"><a href="#传递至远程地址" class="headerlink" title="传递至远程地址"></a>传递至远程地址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: 这个命令的作用即将生成的网页连同配置Push至指定的服务器。</p><h3 id="快速命令"><a href="#快速命令" class="headerlink" title="快速命令"></a>快速命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --deploy</span><br></pre></td></tr></table></figure><p>More info: 命令的功能很简单，即生成静态页面并Push至服务器。</p><h3 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure><p>More info: 清除本地缓存。</p><h3 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;hexo-theme-landscape&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span></span><br></pre></td></tr></table></figure><p>More info: 这是用于显示默认主题的json，由npm安装。存在于package.json的dependencies中。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
