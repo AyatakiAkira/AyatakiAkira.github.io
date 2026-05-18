@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>Coding_C(01)</title>
+    <link href="/2026/05/18/Coding-C-1/"/>
+    <url>/2026/05/18/Coding-C-1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-计算给定数组中最后一个单词的字符数量"><a href="#1-计算给定数组中最后一个单词的字符数量" class="headerlink" title="#1 计算给定数组中最后一个单词的字符数量"></a>#1 计算给定数组中最后一个单词的字符数量</h3><span id="more"></span><ul><li>规则</li><li>1.给定的数组大小介于[0,1000]；</li><li>2.给出的用于检测的字符串长度不超过1000；</li><li>3.使用ACM模式判题，因此需要留意输入输出方式。</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">1000</span>]; <span class="hljs-comment">//初始化存储字符串</span><br>    fgets(str, <span class="hljs-number">1000</span>, <span class="hljs-built_in">stdin</span>); <span class="hljs-comment">//用fgets()函数接收输入</span><br>    <span class="hljs-type">int</span> i = <span class="hljs-built_in">strlen</span>(str) - <span class="hljs-number">1</span>; <span class="hljs-comment">//清除fgets()函数引入的&#x27;\n&#x27;</span><br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>; <span class="hljs-comment">//初始化计数器</span><br>    <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; str[i] == <span class="hljs-string">&#x27; &#x27;</span> ) i--; <span class="hljs-comment">//防止最后一个单词后仍有空格</span><br>    <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; str[i] != <span class="hljs-string">&#x27; &#x27;</span>)<br>    &#123;<br>        count++;<br>        i--;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, count);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul><li>使用循环直接访问字符串的末尾，从最后一位开始计数，每向前移位一次，计数器加一，总次数减一。</li></ul><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul><li>fgets( )函数引入字符串的方式会导致原字符串在被写入数组后在末尾留下换行符’\n’，这可能会影响到计数</li></ul><h3 id="fgets-函数"><a href="#fgets-函数" class="headerlink" title="fgets( )函数"></a>fgets( )函数</h3><ul><li>函数声明</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">char</span> *<span class="hljs-title function_">fgets</span><span class="hljs-params">(<span class="hljs-type">char</span> *str, <span class="hljs-type">int</span> n, FILE *stream)</span><br></code></pre></td></tr></table></figure><ul><li>参数<br>str：指向字符数组的指针，这个指针存储了将要读取的字符串。<br>n：读取的最大字符数，本题中由于一直str数组的长度，因此取常数，一般这里的书使用str传递的数组长度。<br>stream： 指向FILE对象的指针，标识了将要从何处读取字符串，在NowCoder和LeetCode中，由于输入是判题系统给出，因此设置为标准输入流就可以了</li><li>描述<br>简单而言，fget( )函数会将指向的输入流读取并存储在指向的数组，对于本题而言，即将stdin（系统测试样例）输入字符串数组str中。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Code Review</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C Base</tag>
+      
+      <tag>ArrayList/Array &amp; Value</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HCIA#1</title>
+    <link href="/2026/03/16/HCIA-1/"/>
+    <url>/2026/03/16/HCIA-1/</url>
+    
+    <content type="html"><![CDATA[<p>HCIA 以太网协议&amp;以太网帧</p><span id="more"></span><h3 id="以太网帧格式"><a href="#以太网帧格式" class="headerlink" title="以太网帧格式"></a>以太网帧格式</h3><p>标准：Ethernet Ⅱ和IEEE 802.3<br>Ethernet Ⅱ是以太网的事实标准。<br>Ethernet Ⅱ以太网帧的构成：<br>① DMAC(Destination MAC): 6字节，用于标识接受帧的目标MAC地址<br>② SMAC(Source MAC): 6字节，用于标识发送帧的源目标MAC地址。<br>③ Type: 2字节，标识协议类型，通常包括</p><ul><li>0x8000: IPv4</li><li>0x8006: ARP(Address Resolution Protocol，地址解析协议)</li></ul><hr><p>数据帧长度为64-1518字节，设置最短字节的原因为：</p><ul><li>若不规定最小帧长度，则可能出现发送方已将帧全部发送，但是接收方仍未收到帧的第一个数据包导致接收方误判线路情况而发送数据导致冲突。</li></ul><p>出于传输效率和可靠性的综合考虑，设置了以太网帧的最大帧长度为1518字节，其对应的IP数据包长度为1500字节，即MTU(Maxmium Transmission Unit，最大传输单元)。</p><h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3><p>每块接入互联网的网卡都必须拥有唯一的MAC地址。</p><ul><li>MAC地址长度为48Bit。</li><li>MAC地址由16进制数与“-”组合表示。</li></ul><p>广播地址： FF-FF-FF-FF-FF-FF<br>组播地址： 00-00-00-00-00-00</p><ul><li>广播地址用于向局域网上所有节点上的设备发送帧</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Network Engineering</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HCIA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>This is Akira&#39;s Blog!</title>
     <link href="/2026/03/12/hello-world/"/>
     <url>/2026/03/12/hello-world/</url>
