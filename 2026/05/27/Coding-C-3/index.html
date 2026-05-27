@@ -19,22 +19,23 @@
   <meta name="author" content="AyatakiAkira">
   <meta name="keywords" content="">
   
-    <meta name="description" content="HCIA 以太网协议&amp;以太网帧">
+    <meta name="description" content="#3 分割字符串题目要求将字符串进行切割，输出一个字符矩阵。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HCIA#1">
-<meta property="og:url" content="http://ayatakiakira.github.io/2026/03/16/HCIA-1/index.html">
+<meta property="og:title" content="Coding_C[03]">
+<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/27/Coding-C-3/index.html">
 <meta property="og:site_name" content="Akira&#39;s Blog">
-<meta property="og:description" content="HCIA 以太网协议&amp;以太网帧">
+<meta property="og:description" content="#3 分割字符串题目要求将字符串进行切割，输出一个字符矩阵。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-03-16T09:55:20.000Z">
-<meta property="article:modified_time" content="2026-05-18T15:40:32.489Z">
+<meta property="article:published_time" content="2026-05-27T15:14:47.000Z">
+<meta property="article:modified_time" content="2026-05-27T15:41:43.163Z">
 <meta property="article:author" content="AyatakiAkira">
-<meta property="article:tag" content="HCIA">
+<meta property="article:tag" content="ArrayList&#x2F;Array &amp; Value">
+<meta property="article:tag" content="C Base">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>HCIA#1 - Akira&#39;s Blog</title>
+  <title>Coding_C[03] - Akira&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +304,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="HCIA#1"></span>
+            <span id="subtitle" data-typed-text="Coding_C[03]"></span>
           
         </div>
 
@@ -314,8 +315,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-03-16 17:55" pubdate>
-          2026年3月16日 下午
+        <time datetime="2026-05-27 23:14" pubdate>
+          2026年5月27日 晚上
         </time>
       </span>
     
@@ -326,7 +327,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          550 字
+          1k 字
         
       </span>
     
@@ -337,7 +338,7 @@
         
         
         
-          5 分钟
+          9 分钟
         
       </span>
     
@@ -376,33 +377,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">HCIA#1</h1>
+            <h1 id="seo-header">Coding_C[03]</h1>
             
             
               <div class="markdown-body">
                 
-                <p>HCIA 以太网协议&amp;以太网帧</p>
+                <h3 id="3-分割字符串"><a href="#3-分割字符串" class="headerlink" title="#3 分割字符串"></a>#3 分割字符串</h3><p>题目要求将字符串进行切割，输出一个字符矩阵。</p>
 <span id="more"></span>
-<h3 id="以太网帧格式"><a href="#以太网帧格式" class="headerlink" title="以太网帧格式"></a>以太网帧格式</h3><p>标准：Ethernet Ⅱ和IEEE 802.3<br>Ethernet Ⅱ是以太网的事实标准。<br>Ethernet Ⅱ以太网帧的构成：<br>① DMAC(Destination MAC): 6字节，用于标识接受帧的目标MAC地址<br>② SMAC(Source MAC): 6字节，用于标识发送帧的源目标MAC地址。<br>③ Type: 2字节，标识协议类型，通常包括</p>
-<ul>
-<li>0x8000: IPv4</li>
-<li>0x8006: ARP(Address Resolution Protocol，地址解析协议)</li>
+
+<p>即两组之间用回车分行。<br>对于不足8个字符的行，用0补全至8个字符。</p>
+<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>输入字符串：HelloAkira<br>输出：<br>    HelloAki<br>    ra000000</p>
+<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><ul>
+<li>首先判断输入的字符串中字符个数是否是8的倍数。</li>
+<li>如果字符总数不是8的倍数，那么利用for循环将原本的字符串补到8的倍数。</li>
+<li>补上字符串的’\0’</li>
+<li>按每8个字符一组的方式分割已经处理完的字符串。</li>
 </ul>
-<hr>
-<p>数据帧长度为64-1518字节，设置最短字节的原因为：</p>
-<ul>
-<li>若不规定最小帧长度，则可能出现发送方已将帧全部发送，但是接收方仍未收到帧的第一个数据包导致接收方误判线路情况而发送数据导致冲突。</li>
-</ul>
-<p>出于传输效率和可靠性的综合考虑，设置了以太网帧的最大帧长度为1518字节，其对应的IP数据包长度为1500字节，即MTU(Maxmium Transmission Unit，最大传输单元)。</p>
-<h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3><p>每块接入互联网的网卡都必须拥有唯一的MAC地址。</p>
-<ul>
-<li>MAC地址长度为48Bit。</li>
-<li>MAC地址由16进制数与“-”组合表示。</li>
-</ul>
-<p>广播地址： FF-FF-FF-FF-FF-FF<br>组播地址： 00-00-00-00-00-00</p>
-<ul>
-<li>广播地址用于向局域网上所有节点上的设备发送帧</li>
-</ul>
+<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">150</span>];<br>    fgets(str, <span class="hljs-number">150</span>, <span class="hljs-built_in">stdin</span>);<br>    <span class="hljs-type">int</span> length_original = <span class="hljs-built_in">strlen</span>(str);<br>    <span class="hljs-keyword">if</span> (length_original &gt; <span class="hljs-number">0</span> &amp;&amp; str[length_original - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;\n&#x27;</span>)<br>    &#123;<br>        str[length_original - <span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>        length_original--;<br>    &#125;<br>    <span class="hljs-comment">/* 以上为输入的字符串的预处理，即将fgets()函数引入的&#x27;\n&#x27;去除 */</span><br>    <span class="hljs-type">int</span> need = length_original % <span class="hljs-number">8</span>;<br>    <span class="hljs-comment">//计算字符串是否是8的倍数，如果不是，则求最后一行的字符数。</span><br>    <span class="hljs-keyword">if</span> (need != <span class="hljs-number">0</span>)<span class="hljs-comment">//字符串不是8的倍数，需要处理</span><br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> loop_1 = <span class="hljs-number">0</span>; loop_1 &lt; <span class="hljs-number">8</span> - need; loop_1++)<br>        <span class="hljs-comment">//loop_1 &lt; 8 - need是用来作为补齐最后一行的依据，即最后一行还需要补几个零</span><br>        &#123;<br>            str[loop_1 + length_original] = <span class="hljs-string">&#x27;0&#x27;</span>;<span class="hljs-comment">//补零</span><br>        &#125;<br>        str[length_original + <span class="hljs-number">8</span> - need] = <span class="hljs-string">&#x27;\0&#x27;</span>;<span class="hljs-comment">//还原字符串末尾</span><br>    &#125;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(str); i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, str[i]);<br>        count++;<span class="hljs-comment">//每输出一个字符，计数加一</span><br>        <span class="hljs-keyword">if</span> (count % <span class="hljs-number">8</span> == <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<span class="hljs-comment">//计数达到8的倍数，输出回车</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -421,7 +412,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Network-Engineering/" class="category-chain-item">Network Engineering</a>
+  <a href="/categories/Code-Review/" class="category-chain-item">Code Review</a>
   
   
 
@@ -436,7 +427,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/HCIA/" class="print-no-link">#HCIA</a>
+        <a href="/tags/C-Base/" class="print-no-link">#C Base</a>
+      
+        <a href="/tags/ArrayList-Array-Value/" class="print-no-link">#ArrayList/Array & Value</a>
       
     </div>
   
@@ -448,8 +441,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>HCIA#1</div>
-      <div>http://ayatakiakira.github.io/2026/03/16/HCIA-1/</div>
+      <div>Coding_C[03]</div>
+      <div>http://ayatakiakira.github.io/2026/05/27/Coding-C-3/</div>
     </div>
     <div class="license-meta">
       
@@ -461,7 +454,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年3月16日</div>
+          <div>2026年5月27日</div>
         </div>
       
       
@@ -493,18 +486,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/05/18/Coding-C-1/" title="Coding_C[01]">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Coding_C[01]</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/03/12/hello-world/" title="This is Akira&#39;s Blog!">
-                        <span class="hidden-mobile">This is Akira&#39;s Blog!</span>
+                      <a href="/2026/05/27/Coding-C-02/" title="Coding_C[02]">
+                        <span class="hidden-mobile">Coding_C[02]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -19,22 +19,23 @@
   <meta name="author" content="AyatakiAkira">
   <meta name="keywords" content="">
   
-    <meta name="description" content="HCIA 以太网协议&amp;以太网帧">
+    <meta name="description" content="#2 统计某个指定字符的出现次数对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HCIA#1">
-<meta property="og:url" content="http://ayatakiakira.github.io/2026/03/16/HCIA-1/index.html">
+<meta property="og:title" content="Coding_C[02]">
+<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/27/Coding-C-02/index.html">
 <meta property="og:site_name" content="Akira&#39;s Blog">
-<meta property="og:description" content="HCIA 以太网协议&amp;以太网帧">
+<meta property="og:description" content="#2 统计某个指定字符的出现次数对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-03-16T09:55:20.000Z">
-<meta property="article:modified_time" content="2026-05-18T15:40:32.489Z">
+<meta property="article:published_time" content="2026-05-27T14:49:00.000Z">
+<meta property="article:modified_time" content="2026-05-27T15:41:14.276Z">
 <meta property="article:author" content="AyatakiAkira">
-<meta property="article:tag" content="HCIA">
+<meta property="article:tag" content="ArrayList&#x2F;Array &amp; Value">
+<meta property="article:tag" content="C Base">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>HCIA#1 - Akira&#39;s Blog</title>
+  <title>Coding_C[02] - Akira&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +304,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="HCIA#1"></span>
+            <span id="subtitle" data-typed-text="Coding_C[02]"></span>
           
         </div>
 
@@ -314,8 +315,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-03-16 17:55" pubdate>
-          2026年3月16日 下午
+        <time datetime="2026-05-27 22:49" pubdate>
+          2026年5月27日 晚上
         </time>
       </span>
     
@@ -326,7 +327,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          550 字
+          715 字
         
       </span>
     
@@ -337,7 +338,7 @@
         
         
         
-          5 分钟
+          6 分钟
         
       </span>
     
@@ -376,34 +377,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">HCIA#1</h1>
+            <h1 id="seo-header">Coding_C[02]</h1>
             
             
               <div class="markdown-body">
                 
-                <p>HCIA 以太网协议&amp;以太网帧</p>
+                <h3 id="2-统计某个指定字符的出现次数"><a href="#2-统计某个指定字符的出现次数" class="headerlink" title="#2 统计某个指定字符的出现次数"></a>#2 统计某个指定字符的出现次数</h3><p>对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。</p>
 <span id="more"></span>
-<h3 id="以太网帧格式"><a href="#以太网帧格式" class="headerlink" title="以太网帧格式"></a>以太网帧格式</h3><p>标准：Ethernet Ⅱ和IEEE 802.3<br>Ethernet Ⅱ是以太网的事实标准。<br>Ethernet Ⅱ以太网帧的构成：<br>① DMAC(Destination MAC): 6字节，用于标识接受帧的目标MAC地址<br>② SMAC(Source MAC): 6字节，用于标识发送帧的源目标MAC地址。<br>③ Type: 2字节，标识协议类型，通常包括</p>
-<ul>
-<li>0x8000: IPv4</li>
-<li>0x8006: ARP(Address Resolution Protocol，地址解析协议)</li>
-</ul>
-<hr>
-<p>数据帧长度为64-1518字节，设置最短字节的原因为：</p>
-<ul>
-<li>若不规定最小帧长度，则可能出现发送方已将帧全部发送，但是接收方仍未收到帧的第一个数据包导致接收方误判线路情况而发送数据导致冲突。</li>
-</ul>
-<p>出于传输效率和可靠性的综合考虑，设置了以太网帧的最大帧长度为1518字节，其对应的IP数据包长度为1500字节，即MTU(Maxmium Transmission Unit，最大传输单元)。</p>
-<h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3><p>每块接入互联网的网卡都必须拥有唯一的MAC地址。</p>
-<ul>
-<li>MAC地址长度为48Bit。</li>
-<li>MAC地址由16进制数与“-”组合表示。</li>
-</ul>
-<p>广播地址： FF-FF-FF-FF-FF-FF<br>组播地址： 00-00-00-00-00-00</p>
-<ul>
-<li>广播地址用于向局域网上所有节点上的设备发送帧</li>
-</ul>
-
+<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>测试字符串： HelloWorld<br>指定字符： o<br>输出： 2</p>
+<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><p>利用ASC II码对应的值来进行判断。<br>①数字0~9，则直接利用其对应的ASC II码进行计数。<br>②对于字母，可以先将所有的大写字母全部转换成小写字母，然后再进行判断。</p>
+<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>	<span class="hljs-type">char</span> str[<span class="hljs-number">1000</span>];<br>	fgets(str, <span class="hljs-number">1000</span>, <span class="hljs-built_in">stdin</span>);<span class="hljs-comment">//测试样例时出现过数组越界，因此将数组长度调整至1500</span><br>	<span class="hljs-type">char</span> ch;<br>	<span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>	scanf_s(<span class="hljs-string">&quot;%c&quot;</span>, &amp;ch);<span class="hljs-comment">//读取用于判断的目标字符</span><br>	<span class="hljs-keyword">if</span> (ch &gt;= <span class="hljs-string">&#x27;A&#x27;</span> &amp;&amp; ch &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>) ch = ch + <span class="hljs-number">32</span>;<span class="hljs-comment">//如果给定的字符是大写字母，则转换为小写字母</span><br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-built_in">strlen</span>(str); i++)<br>	&#123;<br>		<span class="hljs-keyword">if</span> (str[i] &gt;= <span class="hljs-string">&#x27;A&#x27;</span> &amp;&amp; str[i] &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>) str[i] += <span class="hljs-number">32</span>;<span class="hljs-comment">//当前读取到的字符是大写字母吗？如果是，则转换为小写字母。</span><br>		<span class="hljs-keyword">if</span> (str[i] == ch) count++;<span class="hljs-comment">//比对当前取出的字符与指定的字符，如果相同，计数加一</span><br>	&#125;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, count);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -421,7 +404,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Network-Engineering/" class="category-chain-item">Network Engineering</a>
+  <a href="/categories/Code-Review/" class="category-chain-item">Code Review</a>
   
   
 
@@ -436,7 +419,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/HCIA/" class="print-no-link">#HCIA</a>
+        <a href="/tags/C-Base/" class="print-no-link">#C Base</a>
+      
+        <a href="/tags/ArrayList-Array-Value/" class="print-no-link">#ArrayList/Array & Value</a>
       
     </div>
   
@@ -448,8 +433,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>HCIA#1</div>
-      <div>http://ayatakiakira.github.io/2026/03/16/HCIA-1/</div>
+      <div>Coding_C[02]</div>
+      <div>http://ayatakiakira.github.io/2026/05/27/Coding-C-02/</div>
     </div>
     <div class="license-meta">
       
@@ -461,7 +446,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年3月16日</div>
+          <div>2026年5月27日</div>
         </div>
       
       
@@ -493,9 +478,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/05/18/Coding-C-1/" title="Coding_C[01]">
+                      <a href="/2026/05/27/Coding-C-3/" title="Coding_C[03]">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Coding_C[01]</span>
+                        <span class="hidden-mobile">Coding_C[03]</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -503,8 +488,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/03/12/hello-world/" title="This is Akira&#39;s Blog!">
-                        <span class="hidden-mobile">This is Akira&#39;s Blog!</span>
+                      <a href="/2026/05/18/Coding-C-1/" title="Coding_C[01]">
+                        <span class="hidden-mobile">Coding_C[01]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
