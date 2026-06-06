@@ -19,15 +19,15 @@
   <meta name="author" content="AyatakiAkira">
   <meta name="keywords" content="">
   
-    <meta name="description" content="#3 分割字符串题目要求将字符串进行切割，输出一个字符矩阵。">
+    <meta name="description" content="#2 统计某个指定字符的出现次数对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coding_C[03]">
-<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/27/Coding-C-3/index.html">
+<meta property="og:title" content="Coding_C[02]">
+<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/27/Coding-C-2/index.html">
 <meta property="og:site_name" content="Akira&#39;s Blog">
-<meta property="og:description" content="#3 分割字符串题目要求将字符串进行切割，输出一个字符矩阵。">
+<meta property="og:description" content="#2 统计某个指定字符的出现次数对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-27T15:14:47.000Z">
-<meta property="article:modified_time" content="2026-05-27T15:41:43.163Z">
+<meta property="article:published_time" content="2026-05-27T14:49:00.000Z">
+<meta property="article:modified_time" content="2026-05-27T15:41:14.276Z">
 <meta property="article:author" content="AyatakiAkira">
 <meta property="article:tag" content="ArrayList&#x2F;Array &amp; Value">
 <meta property="article:tag" content="C Base">
@@ -35,7 +35,7 @@
   
   
   
-  <title>Coding_C[03] - Akira&#39;s Blog</title>
+  <title>Coding_C[02] - Akira&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -304,7 +304,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Coding_C[03]"></span>
+            <span id="subtitle" data-typed-text="Coding_C[02]"></span>
           
         </div>
 
@@ -315,7 +315,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-05-27 23:14" pubdate>
+        <time datetime="2026-05-27 22:49" pubdate>
           2026年5月27日 晚上
         </time>
       </span>
@@ -327,7 +327,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          715 字
         
       </span>
     
@@ -338,7 +338,7 @@
         
         
         
-          9 分钟
+          6 分钟
         
       </span>
     
@@ -377,24 +377,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Coding_C[03]</h1>
+            <h1 id="seo-header">Coding_C[02]</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="3-分割字符串"><a href="#3-分割字符串" class="headerlink" title="#3 分割字符串"></a>#3 分割字符串</h3><p>题目要求将字符串进行切割，输出一个字符矩阵。</p>
+                <h3 id="2-统计某个指定字符的出现次数"><a href="#2-统计某个指定字符的出现次数" class="headerlink" title="#2 统计某个指定字符的出现次数"></a>#2 统计某个指定字符的出现次数</h3><p>对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。</p>
 <span id="more"></span>
-
-<p>即两组之间用回车分行。<br>对于不足8个字符的行，用0补全至8个字符。</p>
-<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>输入字符串：HelloAkira<br>输出：<br>    HelloAki<br>    ra000000</p>
-<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><ul>
-<li>首先判断输入的字符串中字符个数是否是8的倍数。</li>
-<li>如果字符总数不是8的倍数，那么利用for循环将原本的字符串补到8的倍数。</li>
-<li>补上字符串的’\0’</li>
-<li>按每8个字符一组的方式分割已经处理完的字符串。</li>
-</ul>
-<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">150</span>];<br>    fgets(str, <span class="hljs-number">150</span>, <span class="hljs-built_in">stdin</span>);<br>    <span class="hljs-type">int</span> length_original = <span class="hljs-built_in">strlen</span>(str);<br>    <span class="hljs-keyword">if</span> (length_original &gt; <span class="hljs-number">0</span> &amp;&amp; str[length_original - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;\n&#x27;</span>)<br>    &#123;<br>        str[length_original - <span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>        length_original--;<br>    &#125;<br>    <span class="hljs-comment">/* 以上为输入的字符串的预处理，即将fgets()函数引入的&#x27;\n&#x27;去除 */</span><br>    <span class="hljs-type">int</span> need = length_original % <span class="hljs-number">8</span>;<br>    <span class="hljs-comment">//计算字符串是否是8的倍数，如果不是，则求最后一行的字符数。</span><br>    <span class="hljs-keyword">if</span> (need != <span class="hljs-number">0</span>)<span class="hljs-comment">//字符串不是8的倍数，需要处理</span><br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> loop_1 = <span class="hljs-number">0</span>; loop_1 &lt; <span class="hljs-number">8</span> - need; loop_1++)<br>        <span class="hljs-comment">//loop_1 &lt; 8 - need是用来作为补齐最后一行的依据，即最后一行还需要补几个零</span><br>        &#123;<br>            str[loop_1 + length_original] = <span class="hljs-string">&#x27;0&#x27;</span>;<span class="hljs-comment">//补零</span><br>        &#125;<br>        str[length_original + <span class="hljs-number">8</span> - need] = <span class="hljs-string">&#x27;\0&#x27;</span>;<span class="hljs-comment">//还原字符串末尾</span><br>    &#125;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(str); i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, str[i]);<br>        count++;<span class="hljs-comment">//每输出一个字符，计数加一</span><br>        <span class="hljs-keyword">if</span> (count % <span class="hljs-number">8</span> == <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<span class="hljs-comment">//计数达到8的倍数，输出回车</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>测试字符串： HelloWorld<br>指定字符： o<br>输出： 2</p>
+<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><p>利用ASC II码对应的值来进行判断。<br>①数字0~9，则直接利用其对应的ASC II码进行计数。<br>②对于字母，可以先将所有的大写字母全部转换成小写字母，然后再进行判断。</p>
+<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>	<span class="hljs-type">char</span> str[<span class="hljs-number">1000</span>];<br>	fgets(str, <span class="hljs-number">1000</span>, <span class="hljs-built_in">stdin</span>);<span class="hljs-comment">//测试样例时出现过数组越界，因此将数组长度调整至1500</span><br>	<span class="hljs-type">char</span> ch;<br>	<span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>	scanf_s(<span class="hljs-string">&quot;%c&quot;</span>, &amp;ch);<span class="hljs-comment">//读取用于判断的目标字符</span><br>	<span class="hljs-keyword">if</span> (ch &gt;= <span class="hljs-string">&#x27;A&#x27;</span> &amp;&amp; ch &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>) ch = ch + <span class="hljs-number">32</span>;<span class="hljs-comment">//如果给定的字符是大写字母，则转换为小写字母</span><br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-built_in">strlen</span>(str); i++)<br>	&#123;<br>		<span class="hljs-keyword">if</span> (str[i] &gt;= <span class="hljs-string">&#x27;A&#x27;</span> &amp;&amp; str[i] &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>) str[i] += <span class="hljs-number">32</span>;<span class="hljs-comment">//当前读取到的字符是大写字母吗？如果是，则转换为小写字母。</span><br>		<span class="hljs-keyword">if</span> (str[i] == ch) count++;<span class="hljs-comment">//比对当前取出的字符与指定的字符，如果相同，计数加一</span><br>	&#125;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, count);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -441,8 +433,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Coding_C[03]</div>
-      <div>http://ayatakiakira.github.io/2026/05/27/Coding-C-3/</div>
+      <div>Coding_C[02]</div>
+      <div>http://ayatakiakira.github.io/2026/05/27/Coding-C-2/</div>
     </div>
     <div class="license-meta">
       
@@ -486,9 +478,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/05/28/Coding-C-4/" title="Coding_C[04]">
+                      <a href="/2026/05/27/Coding-C-3/" title="Coding_C[03]">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Coding_C[04]</span>
+                        <span class="hidden-mobile">Coding_C[03]</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -496,8 +488,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/05/27/Coding-C-2/" title="Coding_C[02]">
-                        <span class="hidden-mobile">Coding_C[02]</span>
+                      <a href="/2026/05/18/Coding-C-1/" title="Coding_C[01]">
+                        <span class="hidden-mobile">Coding_C[01]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

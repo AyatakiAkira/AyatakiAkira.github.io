@@ -19,15 +19,15 @@
   <meta name="author" content="AyatakiAkira">
   <meta name="keywords" content="">
   
-    <meta name="description" content="#2 统计某个指定字符的出现次数对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。">
+    <meta name="description" content="#4 字符种类计算给定字符串中含有的各类符号类型总数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coding_C[02]">
-<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/27/Coding-C-02/index.html">
+<meta property="og:title" content="Coding_C[04]">
+<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/28/Coding-C-4/index.html">
 <meta property="og:site_name" content="Akira&#39;s Blog">
-<meta property="og:description" content="#2 统计某个指定字符的出现次数对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。">
+<meta property="og:description" content="#4 字符种类计算给定字符串中含有的各类符号类型总数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-27T14:49:00.000Z">
-<meta property="article:modified_time" content="2026-05-27T15:41:14.276Z">
+<meta property="article:published_time" content="2026-05-28T09:50:11.000Z">
+<meta property="article:modified_time" content="2026-05-28T10:03:37.229Z">
 <meta property="article:author" content="AyatakiAkira">
 <meta property="article:tag" content="ArrayList&#x2F;Array &amp; Value">
 <meta property="article:tag" content="C Base">
@@ -35,7 +35,7 @@
   
   
   
-  <title>Coding_C[02] - Akira&#39;s Blog</title>
+  <title>Coding_C[04] - Akira&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -304,7 +304,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Coding_C[02]"></span>
+            <span id="subtitle" data-typed-text="Coding_C[04]"></span>
           
         </div>
 
@@ -315,8 +315,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-05-27 22:49" pubdate>
-          2026年5月27日 晚上
+        <time datetime="2026-05-28 17:50" pubdate>
+          2026年5月28日 下午
         </time>
       </span>
     
@@ -327,7 +327,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          715 字
+          914 字
         
       </span>
     
@@ -338,7 +338,7 @@
         
         
         
-          6 分钟
+          8 分钟
         
       </span>
     
@@ -377,16 +377,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Coding_C[02]</h1>
+            <h1 id="seo-header">Coding_C[04]</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="2-统计某个指定字符的出现次数"><a href="#2-统计某个指定字符的出现次数" class="headerlink" title="#2 统计某个指定字符的出现次数"></a>#2 统计某个指定字符的出现次数</h3><p>对于数字，统计出现次数；对于字母，统计其大小写出现的次数的和。</p>
+                <h3 id="4-字符种类"><a href="#4-字符种类" class="headerlink" title="#4 字符种类"></a>#4 字符种类</h3><p>计算给定字符串中含有的各类符号类型总数。</p>
 <span id="more"></span>
-<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>测试字符串： HelloWorld<br>指定字符： o<br>输出： 2</p>
-<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><p>利用ASC II码对应的值来进行判断。<br>①数字0~9，则直接利用其对应的ASC II码进行计数。<br>②对于字母，可以先将所有的大写字母全部转换成小写字母，然后再进行判断。</p>
-<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>	<span class="hljs-type">char</span> str[<span class="hljs-number">1000</span>];<br>	fgets(str, <span class="hljs-number">1000</span>, <span class="hljs-built_in">stdin</span>);<span class="hljs-comment">//测试样例时出现过数组越界，因此将数组长度调整至1500</span><br>	<span class="hljs-type">char</span> ch;<br>	<span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>	scanf_s(<span class="hljs-string">&quot;%c&quot;</span>, &amp;ch);<span class="hljs-comment">//读取用于判断的目标字符</span><br>	<span class="hljs-keyword">if</span> (ch &gt;= <span class="hljs-string">&#x27;A&#x27;</span> &amp;&amp; ch &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>) ch = ch + <span class="hljs-number">32</span>;<span class="hljs-comment">//如果给定的字符是大写字母，则转换为小写字母</span><br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-built_in">strlen</span>(str); i++)<br>	&#123;<br>		<span class="hljs-keyword">if</span> (str[i] &gt;= <span class="hljs-string">&#x27;A&#x27;</span> &amp;&amp; str[i] &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>) str[i] += <span class="hljs-number">32</span>;<span class="hljs-comment">//当前读取到的字符是大写字母吗？如果是，则转换为小写字母。</span><br>		<span class="hljs-keyword">if</span> (str[i] == ch) count++;<span class="hljs-comment">//比对当前取出的字符与指定的字符，如果相同，计数加一</span><br>	&#125;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, count);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>给出的字符串中的字符位于ASC II的0~127位中。</p>
+<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>输入字符串： Welcome<br>输出结果： 6</p>
+<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><ul>
+<li>直接使用字符对应的ASC II作为下标，每有一个不同的字符，就会在用于输出结果的数组中占据一个元素的位置，这个元素的下标就是这个元素的ASC II值，并为这个位置的元素赋值为1。</li>
+<li>最后只需要统计这个数组中的1的数量即可。</li>
+</ul>
+<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">550</span>];<br>    fgets(str, <span class="hljs-number">550</span>, <span class="hljs-built_in">stdin</span>);<br>    <span class="hljs-type">size_t</span> len = <span class="hljs-built_in">strlen</span>(str);<br>    <span class="hljs-keyword">if</span> (len &gt; <span class="hljs-number">0</span> &amp;&amp; str[len - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;\n&#x27;</span>)<br>    &#123;<br>        str[len - <span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    &#125;<span class="hljs-comment">//首先判断fgets()输入的数组的末尾是否有\n，如果有就清除换行符并添加\0</span><br>    <span class="hljs-type">char</span> Count[<span class="hljs-number">128</span>];<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">128</span>)<br>    &#123;<br>        Count[i] = <span class="hljs-number">-1</span>;<br>        i++;<br>    &#125;<br>    <span class="hljs-comment">//👆首先将统计数组的所有元素全部赋值为-1，防止由于空元素位而导致的随机值影响结果</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> loop = <span class="hljs-number">0</span>; loop &lt; <span class="hljs-built_in">strlen</span>(str); loop++)<br>    &#123;<br>        <span class="hljs-type">char</span> ch = str[loop];<br>        Count[(<span class="hljs-type">int</span>)ch] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-comment">//👆首先遍历字符串，计算读出的字符的ASC II码，然后为统计数组中对应元素赋值</span><br>    <span class="hljs-type">int</span> count_out = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> loop2 = <span class="hljs-number">0</span>; loop2 &lt; <span class="hljs-number">128</span>; loop2++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (Count[loop2] != <span class="hljs-number">-1</span>)<br>        &#123;<br>            count_out++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">//👆统计数组中不是-1的元素总和</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, count_out);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -433,8 +437,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Coding_C[02]</div>
-      <div>http://ayatakiakira.github.io/2026/05/27/Coding-C-02/</div>
+      <div>Coding_C[04]</div>
+      <div>http://ayatakiakira.github.io/2026/05/28/Coding-C-4/</div>
     </div>
     <div class="license-meta">
       
@@ -446,7 +450,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年5月27日</div>
+          <div>2026年5月28日</div>
         </div>
       
       
@@ -478,9 +482,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/05/27/Coding-C-3/" title="Coding_C[03]">
+                      <a href="/2026/05/29/Coding-C-05/" title="Coding_C[05]">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Coding_C[03]</span>
+                        <span class="hidden-mobile">Coding_C[05]</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -488,8 +492,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/05/18/Coding-C-1/" title="Coding_C[01]">
-                        <span class="hidden-mobile">Coding_C[01]</span>
+                      <a href="/2026/05/27/Coding-C-3/" title="Coding_C[03]">
+                        <span class="hidden-mobile">Coding_C[03]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

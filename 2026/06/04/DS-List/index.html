@@ -19,23 +19,23 @@
   <meta name="author" content="AyatakiAkira">
   <meta name="keywords" content="">
   
-    <meta name="description" content="#3 分割字符串题目要求将字符串进行切割，输出一个字符矩阵。">
+    <meta name="description" content="1.线性表数据结构基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coding_C[03]">
-<meta property="og:url" content="http://ayatakiakira.github.io/2026/05/27/Coding-C-3/index.html">
+<meta property="og:title" content="DS_List">
+<meta property="og:url" content="http://ayatakiakira.github.io/2026/06/04/DS-List/index.html">
 <meta property="og:site_name" content="Akira&#39;s Blog">
-<meta property="og:description" content="#3 分割字符串题目要求将字符串进行切割，输出一个字符矩阵。">
+<meta property="og:description" content="1.线性表数据结构基础">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-27T15:14:47.000Z">
-<meta property="article:modified_time" content="2026-05-27T15:41:43.163Z">
+<meta property="article:published_time" content="2026-06-04T14:41:11.000Z">
+<meta property="article:modified_time" content="2026-06-06T03:21:56.804Z">
 <meta property="article:author" content="AyatakiAkira">
-<meta property="article:tag" content="ArrayList&#x2F;Array &amp; Value">
 <meta property="article:tag" content="C Base">
+<meta property="article:tag" content="DataStructure">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Coding_C[03] - Akira&#39;s Blog</title>
+  <title>DS_List - Akira&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -304,7 +304,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Coding_C[03]"></span>
+            <span id="subtitle" data-typed-text="DS_List"></span>
           
         </div>
 
@@ -315,8 +315,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-05-27 23:14" pubdate>
-          2026年5月27日 晚上
+        <time datetime="2026-06-04 22:41" pubdate>
+          2026年6月4日 晚上
         </time>
       </span>
     
@@ -327,7 +327,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          2.9k 字
         
       </span>
     
@@ -338,7 +338,7 @@
         
         
         
-          9 分钟
+          24 分钟
         
       </span>
     
@@ -377,24 +377,47 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Coding_C[03]</h1>
+            <h1 id="seo-header">DS_List</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="3-分割字符串"><a href="#3-分割字符串" class="headerlink" title="#3 分割字符串"></a>#3 分割字符串</h3><p>题目要求将字符串进行切割，输出一个字符矩阵。</p>
+                <h3 id="1-线性表"><a href="#1-线性表" class="headerlink" title="1.线性表"></a>1.线性表</h3><p>数据结构基础</p>
 <span id="more"></span>
-
-<p>即两组之间用回车分行。<br>对于不足8个字符的行，用0补全至8个字符。</p>
-<h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p>输入字符串：HelloAkira<br>输出：<br>    HelloAki<br>    ra000000</p>
-<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h4><ul>
-<li>首先判断输入的字符串中字符个数是否是8的倍数。</li>
-<li>如果字符总数不是8的倍数，那么利用for循环将原本的字符串补到8的倍数。</li>
-<li>补上字符串的’\0’</li>
-<li>按每8个字符一组的方式分割已经处理完的字符串。</li>
+<h4 id="数据结构是什么"><a href="#数据结构是什么" class="headerlink" title="数据结构是什么"></a>数据结构是什么</h4><p>个人理解下的数据结构类似于C++和Java中的面向对象，通过一个结构体（Struct）包含一系列数据类型，并通过访问结构体批量编辑结构体内的成员。</p>
+<ul>
+<li><p>举个例子<br>对于一个班级里的学生，它具有至少以下几种需要被统计的元素：①姓名、②学号、③性别、④成绩，对于这些元素而言，虽然确实可以使用多个数组分别存储，并通过数组下标控制元素间关系，但略显复杂，在操作数据时，也不够方便。</p>
+</li>
+<li><p>如何解决<br>利用数据结构存储这些数据，在操作数据尤其是在增加和删除数据时，非常方便。</p>
+</li>
 </ul>
-<h4 id="3-程序"><a href="#3-程序" class="headerlink" title="3.程序"></a>3.程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">150</span>];<br>    fgets(str, <span class="hljs-number">150</span>, <span class="hljs-built_in">stdin</span>);<br>    <span class="hljs-type">int</span> length_original = <span class="hljs-built_in">strlen</span>(str);<br>    <span class="hljs-keyword">if</span> (length_original &gt; <span class="hljs-number">0</span> &amp;&amp; str[length_original - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;\n&#x27;</span>)<br>    &#123;<br>        str[length_original - <span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>        length_original--;<br>    &#125;<br>    <span class="hljs-comment">/* 以上为输入的字符串的预处理，即将fgets()函数引入的&#x27;\n&#x27;去除 */</span><br>    <span class="hljs-type">int</span> need = length_original % <span class="hljs-number">8</span>;<br>    <span class="hljs-comment">//计算字符串是否是8的倍数，如果不是，则求最后一行的字符数。</span><br>    <span class="hljs-keyword">if</span> (need != <span class="hljs-number">0</span>)<span class="hljs-comment">//字符串不是8的倍数，需要处理</span><br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> loop_1 = <span class="hljs-number">0</span>; loop_1 &lt; <span class="hljs-number">8</span> - need; loop_1++)<br>        <span class="hljs-comment">//loop_1 &lt; 8 - need是用来作为补齐最后一行的依据，即最后一行还需要补几个零</span><br>        &#123;<br>            str[loop_1 + length_original] = <span class="hljs-string">&#x27;0&#x27;</span>;<span class="hljs-comment">//补零</span><br>        &#125;<br>        str[length_original + <span class="hljs-number">8</span> - need] = <span class="hljs-string">&#x27;\0&#x27;</span>;<span class="hljs-comment">//还原字符串末尾</span><br>    &#125;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(str); i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, str[i]);<br>        count++;<span class="hljs-comment">//每输出一个字符，计数加一</span><br>        <span class="hljs-keyword">if</span> (count % <span class="hljs-number">8</span> == <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<span class="hljs-comment">//计数达到8的倍数，输出回车</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+<h5 id="定义结构体"><a href="#定义结构体" class="headerlink" title="定义结构体"></a>定义结构体</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-type">int</span> Num[<span class="hljs-number">15</span>];<span class="hljs-comment">//用于存储学号</span><br>    <span class="hljs-type">char</span> Name[<span class="hljs-number">15</span>][<span class="hljs-number">50</span>];<span class="hljs-comment">//用于存储姓名</span><br>    <span class="hljs-type">char</span> Gender[<span class="hljs-number">15</span>];<span class="hljs-comment">//用于存储性别</span><br>    <span class="hljs-type">int</span> Value[<span class="hljs-number">15</span>];<span class="hljs-comment">//用于存储成绩</span><br>&#125;Students;<span class="hljs-comment">//这里的Students是整个结构体的名称，之后调用结构体时会用到</span><br></code></pre></td></tr></table></figure>
+<p>当然，为了方便后续的学生数量变化，也可以在整个程序开始时定义学生数量方便随时修改。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX_STUDENT 100</span><br></code></pre></td></tr></table></figure>
+<p>这个结构体中，包含了学生这个数据结构的所有元素。</p>
+<ul>
+<li>相关功能<br>对于这种学生信息表，需要实现已知任意一个学生的任意一项信息就能查找到其相关的其他信息的功能，这一功能可以通过封装函数来实现，基本原理是通过匹配已知的信息寻找下标，通过下标寻找其他项的数据，在本篇文章中，暂不讨论这一功能的实现，仅讨论基础的线性表。</li>
+</ul>
+<h4 id="简单的线性表-线性表操作"><a href="#简单的线性表-线性表操作" class="headerlink" title="简单的线性表&amp;线性表操作"></a>简单的线性表&amp;线性表操作</h4><ul>
+<li>这个线性表中，仅存储int类型的数据。</li>
+</ul>
+<h5 id="定义结构体-1"><a href="#定义结构体-1" class="headerlink" title="定义结构体"></a>定义结构体</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype;<span class="hljs-comment">//int类型的Elemtype别称</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span><br><span class="hljs-class">&#123;</span><br>    Elemtype data[MAXSIZE];<span class="hljs-comment">//Elemtype类型的数组，这里的Elemtype实际上是基本数据类型的自定义别称</span><br>    <span class="hljs-type">int</span> length;<span class="hljs-comment">//结构体的长度</span><br>&#125;SqList;<br></code></pre></td></tr></table></figure>
+<p>注意：在结构体中定义的length与数组的长度并不相同，length将会通过接下来的结构体数据操作进行动态变化，最大值不能超过MAXSIZE。</p>
+<ul>
+<li>大括号外的SqList是这个结构体的名称，通过这个名称来操作这个结构体。</li>
+</ul>
+<h5 id="初始化线性表"><a href="#初始化线性表" class="headerlink" title="初始化线性表"></a>初始化线性表</h5><p>说是初始化线性表，实际上就是告诉编译器，这个结构体中什么都没存，如何证明结构体中什么都没存呢？自然是当线性表长度为0的时候结构体什么都没存啊。因此，初始化线性表实际上就是使线性表长度为0；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList* L)</span><span class="hljs-comment">//注意这里传入的参数！当传入的参数将要在函数内修改时，需要传入这个参数的指针，如果不修改这个参数，那么就传入参数本身即可。</span><br>&#123;<br>    L-&gt;length = <span class="hljs-number">0</span>;<span class="hljs-comment">//修改线性表长度为0</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>注意：这里的L-&gt;length &#x3D; 0等价于(*L).length &#x3D; 0，也就是结构体本身。由于后一种写法太复杂，因此一般用前面的结构体指针写法。<br>由于InitList不需要传出参数，因此函数类型为void。</p>
+<h5 id="从线性表中获取元素"><a href="#从线性表中获取元素" class="headerlink" title="从线性表中获取元素"></a>从线性表中获取元素</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Status;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ERROR 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> OK 1<span class="hljs-comment">//定义状态值，OK为1，ERROR为0</span></span><br>Status <span class="hljs-title function_">GetElem</span><span class="hljs-params">(SqList L, <span class="hljs-type">int</span> check, Elemtype *e)</span><br>&#123;<br>    <span class="hljs-comment">//线性表长度合法性检查</span><br>    <span class="hljs-keyword">if</span>(L.length == <span class="hljs-number">0</span> || check &lt; <span class="hljs-number">1</span> || check &gt; L.length)<span class="hljs-comment">//线性表长度为0，或check的值在合法值（1-L.length）之外</span><br>    &#123;<br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    *e = L.data[check - <span class="hljs-number">1</span>];<span class="hljs-comment">//解引用指针e,即将需要读取的值存入指针e指向的位置</span><br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>注意：在这段函数中定义的Status是指整个结构体的状态，用于判断结构体操作的必要前置条件是否符合要求，相当于Boolean函数。</p>
+<h5 id="向线性表中插入元素"><a href="#向线性表中插入元素" class="headerlink" title="向线性表中插入元素"></a>向线性表中插入元素</h5><p>插入元素，原理是移位，即从线性表末尾开始，将所有的元素向后移动一位，这个操作直到预定要插入新元素的位置为止。由于需要对线性表进行操作，因此需要在传入参数时，传入指针。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXSIZE 1000</span><br>Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(SqList *L, <span class="hljs-type">int</span> check, ELemtype e)</span><br>&#123;<br>    <span class="hljs-type">int</span> temp;<span class="hljs-comment">//存储中间值</span><br>    <span class="hljs-comment">//判断线性表是否存满</span><br>    <span class="hljs-keyword">if</span>(L-&gt;length == MAXSIZE) <span class="hljs-keyword">return</span> ERROR;<br><br>    <span class="hljs-keyword">if</span>(check &lt;= L-&gt;length)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (temp = L-&gt;length - <span class="hljs-number">1</span>; temp &gt;= check - <span class="hljs-number">1</span>; temp--)<span class="hljs-comment">//从线性表末尾开始将前一位的值一次挪到下一个位置，直到temp等于预定位置停止，并插入新值e</span><br>        &#123;<br>	        L-&gt;data[temp + <span class="hljs-number">1</span>] = L-&gt;data[temp];<br>        &#125;<br>        L-&gt;data[check - <span class="hljs-number">1</span>] = e;<span class="hljs-comment">//把新数据插入指定的位置，地址是check-1是因为数组下标是从0开始的，但是check是从1开始的</span><br>	    L-&gt;length++;<span class="hljs-comment">//将线性表长度加1</span><br>	    <span class="hljs-keyword">return</span> OK;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>数组插入元素前，需要先判断线性表是否存满，如果存满就返回ERROR，没有存满再插入数据，但也要注意插入位置是否合法，插入位置由check控制。</p>
+<h5 id="从线性表中删除元素"><a href="#从线性表中删除元素" class="headerlink" title="从线性表中删除元素"></a>从线性表中删除元素</h5><p>删除元素是，只需要从被删除的位置开始，将后一位元素一次向前移动一次，最后将线性表长度-1即可。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C">Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(SqList *L, <span class="hljs-type">int</span> check)</span><br>&#123;<br>    <span class="hljs-comment">//判定线性表非空</span><br>    <span class="hljs-keyword">if</span>(L-&gt;length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> ERROR;<br>    <span class="hljs-type">int</span> temp;<br>    <span class="hljs-keyword">if</span> (check &lt; <span class="hljs-number">1</span> || check &gt; L-&gt;length) <span class="hljs-keyword">return</span> ERROR;<br>	<span class="hljs-keyword">for</span> (temp = check; temp &lt; L-&gt;length; temp++)<br>	&#123;<br>	    L-&gt;data[temp - <span class="hljs-number">1</span>] = L-&gt;data[temp];<br>	&#125;<br>	L-&gt;length--;<br>	<span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="读取线性表中的元素"><a href="#读取线性表中的元素" class="headerlink" title="读取线性表中的元素"></a>读取线性表中的元素</h5><p>顺序读取线性表中的元素，不需要引入参数，也不需要对线性表进行操作，传入线性表自身作为参数即可。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C">Status <span class="hljs-title function_">ListRead</span><span class="hljs-params">(SqList L)</span><br>&#123;<br>    <span class="hljs-comment">//判定线性表是否为空</span><br>    <span class="hljs-keyword">if</span>(L.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> ERROR;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> check = <span class="hljs-number">0</span>; check &lt; L.length; check++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, L.data[check - <span class="hljs-number">1</span>]);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -412,7 +435,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Code-Review/" class="category-chain-item">Code Review</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88C%E8%AF%AD%E8%A8%80%EF%BC%89/" class="category-chain-item">数据结构（C语言）</a>
   
   
 
@@ -429,7 +452,7 @@
       
         <a href="/tags/C-Base/" class="print-no-link">#C Base</a>
       
-        <a href="/tags/ArrayList-Array-Value/" class="print-no-link">#ArrayList/Array & Value</a>
+        <a href="/tags/DataStructure/" class="print-no-link">#DataStructure</a>
       
     </div>
   
@@ -441,8 +464,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Coding_C[03]</div>
-      <div>http://ayatakiakira.github.io/2026/05/27/Coding-C-3/</div>
+      <div>DS_List</div>
+      <div>http://ayatakiakira.github.io/2026/06/04/DS-List/</div>
     </div>
     <div class="license-meta">
       
@@ -454,7 +477,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年5月27日</div>
+          <div>2026年6月4日</div>
         </div>
       
       
@@ -486,18 +509,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/05/28/Coding-C-4/" title="Coding_C[04]">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Coding_C[04]</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/05/27/Coding-C-2/" title="Coding_C[02]">
-                        <span class="hidden-mobile">Coding_C[02]</span>
+                      <a href="/2026/05/29/Coding-C-06/" title="Coding_C[06]">
+                        <span class="hidden-mobile">Coding_C[06]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
